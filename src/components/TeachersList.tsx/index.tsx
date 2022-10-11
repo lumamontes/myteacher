@@ -1,9 +1,11 @@
 import { Button } from "@mui/material";
-import { Teacher } from "../../types/teacher";
+import { FormatService } from "../../services/FormatService";
+import { Teacher } from "../../@types/teacher";
 import { TeacherDescription, TeacherName, TeacherPhoto, TeacherPrice, TeachersListItem, TeachersListStyled, Container, EmptyTeachersList } from "./TeachersList.style";
 
 interface TeacherListProps {
     teachersData: Teacher[],
+    onSelect: (teacher: Teacher) => void
 }
 
 const TeachersList = (props: TeacherListProps) => {
@@ -16,9 +18,9 @@ const TeachersList = (props: TeacherListProps) => {
                             <TeacherPhoto src="https://github.com/lumamontes.png"></TeacherPhoto>
                             <Container>
                                 <TeacherName>{teacher.name}</TeacherName>
-                                <TeacherPrice>{teacher.price.toLocaleString('pt-br',{minimumFractionDigits: 2, style: 'currency', currency: 'BRL'})} por hora</TeacherPrice>
-                                <TeacherDescription>{teacher.description}</TeacherDescription>
-                                <Button sx={{ width: '70%' }}>Marcar aula com {teacher.name}</Button>
+                                <TeacherPrice>{ FormatService.monetaryValue(teacher.price)} por hora</TeacherPrice>
+                                <TeacherDescription>{FormatService.limitText(teacher.description, 50)}</TeacherDescription>
+                                <Button onClick={() => props.onSelect(teacher)} sx={{ width: '70%' }}>Marcar aula com {teacher.name}</Button>
                             </Container>
                         </TeachersListItem>
                     ))
