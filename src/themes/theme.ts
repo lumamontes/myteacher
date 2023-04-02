@@ -3,13 +3,13 @@ import { createTheme } from '@mui/material';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#F52273',
+            main: '#f97aab',
         },
         secondary: {
-            main: '#F5F5F5',
+            main: '#424242',
         },
         text: {
-            primary: '#F52273',
+            primary: '#f97aab',
             secondary: '#6c6767',
         },
     },
@@ -18,8 +18,8 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     color: '#FFF',
-                    borderRadius: '0',
-                    backgroundColor: '#F52273',
+                    borderRadius: '4',
+                    backgroundColor: '#f97aab',
                     textTransform: 'none',
                     fontWeight: 'bold',
                     paddingTop: '12px',

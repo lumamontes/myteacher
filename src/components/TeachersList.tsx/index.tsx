@@ -15,12 +15,12 @@ const TeachersList = (props: TeacherListProps) => {
                 <TeachersListStyled>
                     {props.teachersData.map(teacher => (
                         <TeachersListItem key={teacher.id}>
-                            <TeacherPhoto src="https://github.com/lumamontes.png"></TeacherPhoto>
+                            <TeacherPhoto src={teacher.photo}></TeacherPhoto>
                             <Container>
                                 <TeacherName>{teacher.name}</TeacherName>
                                 <TeacherPrice>{ FormatService.monetaryValue(teacher.price)} por hora</TeacherPrice>
                                 <TeacherDescription>{FormatService.limitText(teacher.description, 50)}</TeacherDescription>
-                                <Button onClick={() => props.onSelect(teacher)} sx={{ width: '70%' }}>Marcar aula com {teacher.name}</Button>
+                                <Button onClick={() => props.onSelect(teacher)} sx={{ width: '100%' }}>Marcar aula com {teacher.name}</Button>
                             </Container>
                         </TeachersListItem>
                     ))

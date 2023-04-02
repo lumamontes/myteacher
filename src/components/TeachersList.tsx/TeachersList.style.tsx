@@ -8,7 +8,7 @@ padding:  ${({ theme }) => theme.spacing(10, 2, 10, 2)};
    
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: ${({ theme }) => theme.spacing(9)};
+   gap: ${({ theme }) => theme.spacing(12)};
 
    ${({ theme }) => theme.breakpoints.down('md')}{
        grid-template-columns: 1fr;
@@ -27,6 +27,7 @@ list-style: none;
 
 export const TeacherPhoto = styled('img')`
 width: 100%;
+border-radius: 50%
     
 `;
 export const Container = styled('div')`

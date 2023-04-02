@@ -26,7 +26,7 @@ framework para criar API com django:
 
 como instalar: pip djangorestframework
 
-django rest_framwork
+django rest_framework
 
 criar migration:
 
